@@ -48,7 +48,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
+    content: "";
     content: none;
 }
 
@@ -114,11 +114,11 @@ audio:not([controls]) {
  */
 html {
     font-size: 100%;
-  /* 1 */
+ /* 1 */
     -webkit-text-size-adjust: 100%;
-  /* 2 */
+ /* 2 */
     -ms-text-size-adjust: 100%;
-  /* 2 */
+ /* 2 */
 }
 
 /**
@@ -142,9 +142,9 @@ a:hover {
  */
 img {
     border: 0;
-  /* 1 */
+ /* 1 */
     -ms-interpolation-mode: bicubic;
-  /* 2 */
+ /* 2 */
 }
 
 /**
@@ -177,12 +177,12 @@ fieldset {
  */
 legend {
     border: 0;
-  /* 1 */
+ /* 1 */
     padding: 0;
     white-space: normal;
-  /* 2 */
+ /* 2 */
     *margin-left: -7px;
-  /* 3 */
+ /* 3 */
 }
 
 /**
@@ -196,13 +196,13 @@ input,
 select,
 textarea {
     font-size: 100%;
-  /* 1 */
+ /* 1 */
     margin: 0;
-  /* 2 */
+ /* 2 */
     vertical-align: baseline;
-  /* 3 */
+ /* 3 */
     *vertical-align: middle;
-  /* 3 */
+ /* 3 */
 }
 
 /**
@@ -235,15 +235,15 @@ select {
  *    Known issue: inner spacing remains in IE 6.
  */
 button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+html input[type=button],
+input[type=reset],
+input[type=submit] {
     -webkit-appearance: button;
-  /* 2 */
+ /* 2 */
     cursor: pointer;
-  /* 3 */
+ /* 3 */
     *overflow: visible;
-  /* 4 */
+ /* 4 */
 }
 
 /**
@@ -260,16 +260,16 @@ html input[disabled] {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-input[type="checkbox"],
-input[type="radio"] {
+input[type=checkbox],
+input[type=radio] {
     box-sizing: border-box;
-  /* 1 */
+ /* 1 */
     padding: 0;
-  /* 2 */
+ /* 2 */
     *height: 13px;
-  /* 3 */
+ /* 3 */
     *width: 13px;
-  /* 3 */
+ /* 3 */
 }
 
 /**
@@ -277,10 +277,9 @@ input[type="radio"] {
  * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
  *    (include `-moz` to future-proof).
  */
-input[type="search"] {
+input[type=search] {
     -webkit-appearance: textfield;
-  /* 1 */
-  /* 2 */
+ /* 1 */ /* 2 */
     box-sizing: content-box;
 }
 
@@ -288,8 +287,8 @@ input[type="search"] {
  * Remove inner padding and search cancel button in Safari 5 and Chrome
  * on OS X.
  */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
     -webkit-appearance: none;
 }
 
@@ -308,9 +307,9 @@ input::-moz-focus-inner {
  */
 textarea {
     overflow: auto;
-  /* 1 */
+ /* 1 */
     vertical-align: top;
-  /* 2 */
+ /* 2 */
 }
 
 /**
@@ -360,26 +359,32 @@ textarea {
     padding: 0.2em 0;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
     background-color: #181818;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: 1.4rem;
     color: #fff;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* Blocks */
-.page {
-    overflow: hidden;
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .header {
@@ -389,16 +394,6 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 1000;
-}
-
-.sidebar {
-    width: 300px;
-    height: 100vh;
-    background-color: #ccc;
-    position: fixed;
-    top: 0;
-    left: 0;
     z-index: 1000;
 }
 
