@@ -17,7 +17,47 @@
 <body>
     <div class="page">
         <header class="header">
-        	header
+        	<div class="header__left">
+        		<nav class="nav">
+        			<ul class="nav__list">
+        				<li class="nav__item">
+        					<a class="nav__link" href="#">Главная</a>
+        				</li>
+        				<li class="nav__item">
+        					<a class="nav__link has-subnav" href="#">Статьи</a>
+        					<ul class="subnav">
+        						<li>
+        							<a class="subnav__link" href="#">Создание сайтов</a>
+        						</li>
+        						<li>
+        							<a class="subnav__link" href="#">Интернет маркетинг</a>
+        						</li>
+        						<li>
+        							<a class="subnav__link" href="#">Продвижение видео</a>
+        						</li>
+        					</ul>
+        				</li>
+        				<li class="nav__item">
+        					<a class="nav__link" href="#">Обо мне</a>
+        				</li>
+        				<li class="nav__item">
+        					<a class="nav__link" href="#">Реклама</a>
+        				</li>
+        			</ul>
+        		</nav>
+        	</div>
+        	<div class="header__right">
+        		<nav class="nav">
+        			<ul class="nav__list">
+        				<li class="nav__item">
+        					<a class="nav__link" href="#">Профиль</a>
+        				</li>
+        			</ul>
+        		</nav>
+        		<form class="search" action="/" method="post">
+        			<input class="search__input" type="text" placeholder="Поиск по блогу">
+        		</form>
+        	</div>
         </header>
 
         <aside class="sidebar">
@@ -26,11 +66,9 @@
             </div>
             <div class="sidebar__content">
                 <div class="profile">
-                    <div class="profile__avatar">
-                        <img src="https://placeholder.com/100" alt="avatar">
-                    </div>
+                    <img class="profile__avatar" src="assets/images/ava.png" alt="avatar">
                     <div class="profile__name">Александр Медведев</div>
-                    <div class="profile__prof">блог frot-end разработчика</div>
+                    <div class="profile__prof">блог front-end разработчика</div>
                     <ul class="social">
                         <li class="social__item">
                             <a class="social__link" href="#" target="_blank">
@@ -65,8 +103,47 @@
         <main class="main">
             <div class="container">
                 
-                Hello!
+                <!-- Stories -->
+                <div class="stories">
+                	<div class="stories__item">
+                		<img class="stories__preview" src="assets/images/stories/story1.jpg" alt="фото сторис">
+                		<div class="stories__title">Отдыхаю на природе</div>
+                		<time class="stories__date" datetime="2020-09-21 19:21">21.09.2020</time>
+                	</div>
+                	<div class="stories__item">
+                		<img class="stories__preview" src="assets/images/stories/story2.jpg" alt="фото сторис">
+                		<div class="stories__title">Заканчиваю
+                			сложный проект</div>
+                		<time class="stories__date" datetime="2020-09-21 19:21">15.09.2020</time>
+                	</div>
+                	<div class="stories__item">
+                		<img class="stories__preview" src="assets/images/stories/story3.jpg" alt="фото сторис">
+                		<div class="stories__title">Переехал в новую
+                			квартиру</div>
+                		<time class="stories__date" datetime="2020-09-21 19:21">11.09.2020</time>
+                	</div>
+                	<div class="stories__item">
+                		<img class="stories__preview" src="assets/images/stories/story4.jpg" alt="фото сторис">
+                		<div class="stories__title">Осень пришла!</div>
+                		<time class="stories__date" datetime="2020-09-21 19:21">28.08.2020</time>
+                	</div>
+                </div> <!-- stories -->
                 
+                
+                <!-- Add post -->
+                <div class="add-post">
+                	<form class="add-post__form" action="/" method="post">
+                		<textarea class="add-post__textarea" name="post-text" placeholder="Напишите что-нибудь"></textarea>
+                		<div class="add-post__form-actions">
+                			<label class="add-post__file" for="add-post-file">
+                				<input type="file" id="add-post-file">
+                			</label>
+                			<button class="add-post__send" type="submit">
+                				<img src="assets/images/post-btn.svg" alt="отправить пост">
+                			</button>
+                		</div>
+                	</form>
+                </div>
             </div>
             
            
