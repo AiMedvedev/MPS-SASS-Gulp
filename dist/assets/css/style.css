@@ -377,6 +377,15 @@ body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* Blocks */
 .sidebar {
     width: 300px;
@@ -460,12 +469,12 @@ body {
     line-height: 1.2;
     text-transform: uppercase;
     color: #fff;
-    text-decoration: none;
     transition: background-color 0.2s linear;
 }
 
 .nav__link:hover {
     background-color: #3137C9;
+    text-decoration: none;
 }
 
 .nav__link.has-subnav {
@@ -504,13 +513,13 @@ body {
     font-size: 1.2rem;
     line-height: 1.2;
     color: #fff;
-    text-decoration: none;
     padding: 0.5rem 1.2rem;
     transition: background-color 0.2s ease-in-out;
 }
 
 .subnav__link:hover {
     background-color: #2c31b4;
+    text-decoration: none;
 }
 
 .search {
@@ -642,6 +651,14 @@ body {
 
 .btn--blue:hover {
     background-color: #2c31b4;
+}
+
+.btn--rounded {
+    border-radius: 0.41em;
+}
+
+.btn--small {
+    padding: 0.7em 1.25em;
 }
 
 .stories {
@@ -813,11 +830,11 @@ body {
 }
 
 .post__header {
-    margin: -2.5rem -2.5rem 2.5rem -2.5rem;
+    margin: 0 0 2.5rem;
 }
 
-.post__header--video {
-    margin: 0 0 2.5rem;
+.post__header--preview {
+    margin: -2.5rem -2.5rem 2.5rem -2.5rem;
 }
 
 .post__preview {
@@ -837,18 +854,65 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.post__title a {
-    color: inherit;
-    text-decoration: none;
+.post__title--mb0 {
+    margin-bottom: 0;
 }
 
-.post__title a:hover {
-    text-decoration: underline;
+.post__description {
+    font-size: 1.4rem;
+    color: #D2D2D2;
 }
 
 .post__text {
     font-size: 1.4rem;
-    color: #D2D2D2;
+    color: #fff;
+    border-bottom: 1px solid #1C1C1C;
+    padding-bottom: 0.5rem;
+}
+
+.post__text p {
+    margin-bottom: 2.5rem;
+}
+
+.post__text h2, .post__text h3, .post__text h4, .post__text h5, .post__text h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.post__text h2 {
+    font-size: 1.5em;
+}
+
+.post__text h3 {
+    font-size: 1.3em;
+}
+
+.post__text h4 {
+    font-size: 1.15em;
+}
+
+.post__text ul, .post__text ol {
+    margin-bottom: 3rem;
+}
+
+.post__text ol {
+    list-style: decimal;
+    list-style-position: inside;
+}
+
+.post__text table {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.post__text img {
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+
+.post__text a {
+    color: #3137C9;
 }
 
 .post__footer {
@@ -865,15 +929,6 @@ body {
     display: flex;
     color: #828282;
     line-height: 1.2;
-}
-
-.post__data a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.post__data a:hover {
-    text-decoration: underline;
 }
 
 .post__data-item:not(:last-child):after {
@@ -898,12 +953,46 @@ body {
     text-decoration: underline;
 }
 
-.embed {
+.post__actions {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    color: #fff, 0.6;
+}
+
+.post__actions a {
+    opacity: 0.6;
+    transition: opacity 0.2s linear;
+}
+
+.post__actions a:hover {
+    opacity: 1;
+}
+
+.post__actions-icon {
+    margin-left: 1rem;
+}
+
+.post__subtitle {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.embed,
+.fr-video {
+    display: block;
     position: relative;
     overflow: hidden;
 }
 
-.embed:before {
+.embed:before,
+.fr-video:before {
     content: "";
     display: block;
     padding-top: 56.25%;
@@ -912,7 +1001,11 @@ body {
 .embed iframe,
 .embed video,
 .embed object,
-.embed embed {
+.embed embed,
+.fr-video iframe,
+.fr-video video,
+.fr-video object,
+.fr-video embed {
     position: absolute;
     top: 0;
     left: 0;
@@ -955,4 +1048,159 @@ body {
 .pagination__link.active {
     background-color: #3137C9;
     box-shadow: 0 0 10px rgba(49, 55, 201, 0.15);
+}
+
+.related {
+    border-bottom: 1px solid #1C1C1C;
+    padding-bottom: 0.5rem;
+}
+
+.related__list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.related__list-item {
+    margin-bottom: 2.5rem;
+    width: 50%;
+}
+
+.related__list-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #F3EBA2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.related__list-date {
+    font-size: 1.2rem;
+    color: #828282;
+}
+
+.comments {
+    margin-top: 5rem;
+}
+
+.comments > .comments {
+    padding-left: 3rem;
+    margin-top: 0;
+}
+
+.comments__item {
+    margin-bottom: 3rem;
+}
+
+.comment__header {
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.comment__avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.comment__author {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+.comment__from {
+    color: #fff;
+    font-weight: 500;
+}
+
+.comment__date {
+    color: #757575;
+}
+
+.comment__text {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.comment__reply {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    color: #3137C9;
+}
+
+.comment__reply:hover {
+    text-decoration: underline;
+}
+
+.form__group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.form__control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #3F3F3F;
+    border-radius: 0;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.form__control::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form__control::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form__control:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form__control::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form__control::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.form__control:focus + .form__line {
+    width: 100%;
+}
+
+.form__control--textarea {
+    resize: none;
+    overflow: hidden;
+    height: 30px;
+}
+
+.form__line {
+    width: 0;
+    height: 1px;
+    background-color: #3137C9;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: width 0.2s linear;
 }

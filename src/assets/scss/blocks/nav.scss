@@ -21,12 +21,12 @@
 	line-height: 1.2;
 	text-transform: uppercase;
 	color: $white;
-	text-decoration: none;
 	
 	transition: background-color .2s linear;
 
 	&:hover {
 		background-color: $blue;
+		text-decoration: none;
 	}
 
 	&.has-subnav {
