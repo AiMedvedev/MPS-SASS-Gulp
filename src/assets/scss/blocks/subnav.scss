@@ -1,7 +1,7 @@
 .subnav {
 	display: none;
 	width: 16.5rem;
-	padding: .8rem;
+	padding: .8rem 0;
 
 	position: absolute;
 	top: 100%;
@@ -12,6 +12,13 @@
 	box-shadow: 0 6px 8px rgba($black, .2);
 	transition: background-color .2s ease-in-out;
 	
+	@include breakpoint($tablet-bp) {
+		position: static;
+		width: 100%;
+		padding-left: 1rem;
+
+		box-shadow: none;
+	}
 }
 
 .subnav__link {
@@ -27,5 +34,16 @@
 	&:hover {
 		background-color: darken($blue, 5%);
 		text-decoration: none;
+	}
+
+	@include breakpoint($tablet-bp) {
+		padding-left: 0;
+		padding-right: 0;
+		
+		font-size: 1.4rem;
+
+		&:hover {
+			background-color: none;
+		}
 	}
 }

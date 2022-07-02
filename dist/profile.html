@@ -14,7 +14,7 @@
     
     <title>Profile</title>
 </head>
-<body class="no-scroll">
+<body class="show-sidebar">
     <div class="page">
         <header class="header">
         	<div class="header__left">
@@ -45,6 +45,10 @@
         				</li>
         			</ul>
         		</nav>
+        
+        		<button class="burger active" type="button">
+        			<span>Открыть навигацию</span>
+        		</button>
         	</div>
         	<div class="header__right">
         		<nav class="nav">
@@ -70,8 +74,11 @@
             <div class="sidebar__content">
                 <div class="profile">
                     <img class="profile__avatar" src="assets/images/ava.png" alt="avatar">
-                    <div class="profile__name">Александр Медведев</div>
-                    <div class="profile__prof">блог front-end разработчика</div>
+                    <div class="profile__header">
+                        <div class="profile__name">Александр Медведев</div>
+                        <div class="profile__prof">блог front-end разработчика</div>
+                    </div>
+                    
                     <ul class="social">
                         <li class="social__item">
                             <a class="social__link" href="#" target="_blank">
@@ -96,6 +103,33 @@
                         </p>
                     </div>
                 </div>
+                <nav class="nav nav--mobile">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a class="nav__link has-subnav" href="#">Статьи</a>
+                            <ul class="subnav">
+                                <li>
+                                    <a class="subnav__link" href="post.html">Создание сайтов</a>
+                                </li>
+                                <li>
+                                    <a class="subnav__link" href="#">Интернет маркетинг</a>
+                                </li>
+                                <li>
+                                    <a class="subnav__link" href="#">Продвижение видео</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="text.html">Обо мне</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="#">Реклама</a>
+                        </li>
+                        <li class="nav__item">
+                            <a class="nav__link" href="profile.html">Профиль</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         
             <div class="sidebar__footer">
@@ -143,8 +177,6 @@
                 	<button class="btn btn--blue btn--rounded btn--small" type="submit">Сохранить</button>
                 </form>
             </div>
-            
-           
         </main>
     
         <footer>Footer</footer>

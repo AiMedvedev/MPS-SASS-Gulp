@@ -14,11 +14,12 @@
 
 .add-post__textarea {
 	display: block;
-	width: 75%;
+	flex-grow: 1;
 	height: 2.6rem;
 	font-family: inherit;
 	font-size: 1.5rem;
 	color: $white;
+	overflow: hidden;
 
 	border: none;
 	background: transparent;
@@ -30,7 +31,8 @@
 }
 
 .add-post__form-actions {
-	width: 25%;
+	width: 12rem;
+	flex-shrink: 0;
 	display: flex;
 	justify-content: flex-end;
 }
