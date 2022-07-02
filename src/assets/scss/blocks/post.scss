@@ -6,6 +6,11 @@
 
 	margin-bottom: 3rem;
 	padding: 2.5rem;
+
+	@include breakpoint($mobile-bp) {
+		padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+		margin-bottom: 0.5rem;
+	}
 }
 
 .post__header {
@@ -34,6 +39,14 @@
 
 	&--mb0 {
 		margin-bottom: 0;
+	}
+
+	&--open {
+		margin-bottom: 0.75rem;
+	}
+
+	@include breakpoint($mobile-bp) {
+		line-height: 1.2;
 	}
 }
 
@@ -87,6 +100,10 @@
 		display: block;
 		min-width: 100%;
 		height: auto;
+
+		@include breakpoint($mobile-bp) {
+			max-width: 100%
+		}
 	}
 
 	a {
@@ -98,6 +115,11 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	@include breakpoint($mobile-bp) {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 
 .post__data {
@@ -105,6 +127,11 @@
 
 	color: #828282;
 	line-height: 1.2;
+
+	@include breakpoint($mobile-bp) {
+		font-size: 1.2rem;
+		margin-bottom: .8rem;
+	}
 }
 
 .post__data-item {
@@ -148,6 +175,13 @@
 
 		&:hover {
 			opacity: 1;
+		}
+	}
+
+	
+	&>.return {
+		@include breakpoint($tablet-bp) {
+			opacity: 0;
 		}
 	}
 }

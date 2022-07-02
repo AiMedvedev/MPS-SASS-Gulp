@@ -2,6 +2,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin-bottom: 3rem;
+
+	@include breakpoint($tablet-bp) {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .tags__item {

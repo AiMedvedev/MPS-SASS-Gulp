@@ -1,14 +1,26 @@
 .comments {
 	margin-top: 5rem;
 
+	@include breakpoint($tablet-bp) {
+		margin-top: 3rem;
+	}
+
 	> .comments {
 		padding-left: 3rem;
 		margin-top: 0;
+
+		@include breakpoint($tablet-bp) {
+			padding-left: 1.5rem;
+		}
 	}
 }
 
 .comments__item {
 	margin-bottom: 3rem;
+
+	@include breakpoint($tablet-bp) {
+		margin-bottom: 1.5rem;
+	}
 }
 
 .comment__header {

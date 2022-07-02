@@ -5,6 +5,14 @@
 	background-color: $secondary;
 	box-shadow: 0 15px 25px rgba($black, .45);
 	border-radius: 5px;
+
+	@include breakpoint($tablet-bp) {
+		padding: .5rem 1rem;
+	}
+
+	@include breakpoint($mobile-bp) {
+		display: none;
+	}
 }
 
 .add-post__form {
@@ -35,6 +43,10 @@
 	flex-shrink: 0;
 	display: flex;
 	justify-content: flex-end;
+
+	@include breakpoint($tablet-bp) {
+		width: 9rem;
+	}
 }
 
 .add-post__file,
@@ -49,6 +61,11 @@
 	border: none;
 
 	transition: background-color .2s linear;
+
+	@include breakpoint($tablet-bp) {
+		width: 3rem;
+		height: 3rem;
+	}
 }
 
 .add-post__file {
