@@ -44,6 +44,7 @@
 	&--story {
 		padding: 0;
 		background: none;
+		max-width: 80rem;
 	}
 }
 
@@ -89,6 +90,22 @@
 }
 
 .modal__video {
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
+
+	iframe {
+		@include breakpoint($tablet-bp) {
+			width: 720px;
+			height: 380px;
+		}
+
+		@include breakpoint($mobile-bp) {
+			width: 360px;
+			height: 190px;
+			
+		}
+	}
+	
 }

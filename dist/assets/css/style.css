@@ -1931,6 +1931,7 @@ a:hover {
 .modal__content--story {
     padding: 0;
     background: none;
+    max-width: 80rem;
 }
 
 .modal__close {
@@ -1977,6 +1978,25 @@ a:hover {
 }
 
 .modal__video {
-    display: block;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin: 0 auto;
+}
+
+@media (max-width: 991px) {
+    .modal__video iframe {
+        width: 720px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 700px) {
+    .modal__video iframe {
+        width: 360px;
+        height: 190px;
+    }
 }
