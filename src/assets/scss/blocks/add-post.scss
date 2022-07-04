@@ -1,5 +1,5 @@
 .add-post {
-	padding: 1.5rem 2rem;
+	padding: 1rem 2rem;
 	margin-bottom: 3rem;
 
 	background-color: $secondary;
@@ -17,13 +17,13 @@
 
 .add-post__form {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 }
 
 .add-post__textarea {
 	display: block;
 	flex-grow: 1;
-	height: 2.6rem;
+	height: 4rem;
 	font-family: inherit;
 	font-size: 1.5rem;
 	color: $white;

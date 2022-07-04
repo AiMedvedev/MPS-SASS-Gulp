@@ -377,8 +377,14 @@ body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-body.no-scroll, body.show-sidebar {
+body.no-scroll {
     overflow: hidden;
+}
+
+@media (max-width: 991px) {
+    body.show-sidebar {
+        overflow: hidden;
+    }
 }
 
 a {
@@ -951,14 +957,6 @@ a:hover {
 
     .show-sidebar .page:after {
         content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(17, 0, 0, 0.8);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 100;
     }
 }
 
@@ -970,6 +968,19 @@ a:hover {
 
 .page__title--center {
     text-align: center;
+}
+
+@media (max-width: 991px) {
+    .page__mask {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(17, 0, 0, 0.8);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
 }
 
 .stories {
@@ -1052,7 +1063,7 @@ a:hover {
 }
 
 .add-post {
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     margin-bottom: 3rem;
     background-color: #121212;
     box-shadow: 0 15px 25px rgba(17, 0, 0, 0.45);
@@ -1074,15 +1085,15 @@ a:hover {
 .add-post__form {
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-align: center;
-    align-items: center;
+    -ms-flex-align: end;
+    align-items: flex-end;
 }
 
 .add-post__textarea {
     display: block;
     -ms-flex-positive: 1;
     flex-grow: 1;
-    height: 2.6rem;
+    height: 4rem;
     font-family: inherit;
     font-size: 1.5rem;
     color: #fff;
@@ -1637,7 +1648,7 @@ a:hover {
 .form__control--textarea {
     resize: none;
     overflow: hidden;
-    height: 30px;
+    height: 32px;
 }
 
 .form__line {
@@ -1887,6 +1898,11 @@ a:hover {
     z-index: 1010;
 }
 
+.modal.show {
+    display: -ms-flexbox;
+    display: flex;
+}
+
 .modal__content {
     position: relative;
     width: 100%;
@@ -1894,10 +1910,27 @@ a:hover {
     padding: 8rem;
     background-color: #202020;
     border-radius: 5px;
+    opacity: 0;
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    transition: opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+@media (max-width: 991px) {
+    .modal__content {
+        padding: 5rem 3rem;
+    }
 }
 
 .modal__content--contact {
     padding-bottom: 2.5rem;
+}
+
+.modal__content--story {
+    padding: 0;
+    background: none;
 }
 
 .modal__close {
@@ -1941,4 +1974,9 @@ a:hover {
 
 .modal__footer a:hover {
     text-decoration: none;
+}
+
+.modal__video {
+    display: block;
+    margin: 0 auto;
 }

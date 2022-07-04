@@ -18,10 +18,15 @@ body {
     color: $white;
     font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 
-    &.no-scroll,
-    &.show-sidebar {
+    &.no-scroll {
         overflow: hidden;
     }
+    
+    @include breakpoint($tablet-bp) {
+		&.show-sidebar {
+            overflow: hidden;
+        }
+	}
 }
 
 a {
@@ -63,4 +68,4 @@ a {
 @import "blocks/tags";
 @import "blocks/cabinet";
 
-@import "blocks/contact-modal";
+@import "blocks/modal";
